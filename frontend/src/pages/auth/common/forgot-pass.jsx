@@ -3,13 +3,18 @@ import Textinput from "@/components/ui/Textinput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { cpf } from "cpf-cnpj-validator";
 
 const schema = yup
   .object({
-    email: yup.string().email("Invalid email").required("Email is Required"),
-    password: yup.string().required("Password is Required"),
+    cpf: yup
+      .string()
+      .test('cpf', 'CPF inválido', value => cpf.isValid(value))
+      .required('CPF é obrigatório'),
+    password: yup.string().required('Senha é obrigatória'),
   })
   .required();
+
 const ForgotPass = () => {
   const {
     register,
@@ -26,16 +31,17 @@ const ForgotPass = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 ">
       <Textinput
-        name="email"
-        label="email"
-        type="email"
+        name="cpf"
+        label="CPF"
+        defaultValue="Informe seu CPF"
+        type="cpf"
         register={register}
-        error={errors.email}
+        error={errors.cpf}
         className="h-[48px]"
       />
 
       <button className="btn btn-dark block w-full text-center">
-        Send recovery email
+        Envie um e-mail para recuperar a senha
       </button>
     </form>
   );

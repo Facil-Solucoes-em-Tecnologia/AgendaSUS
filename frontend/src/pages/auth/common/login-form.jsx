@@ -11,12 +11,19 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLoginMutation } from "@/store/api/auth/authApiSlice";
 import { setUser } from "@/store/api/auth/authSlice";
 import { toast } from "react-toastify";
+import { cpf } from "cpf-cnpj-validator";
+
 const schema = yup
   .object({
-    email: yup.string().email("Invalid email").required("Email is Required"),
-    password: yup.string().required("Password is Required"),
+    cpf: yup
+      .string()
+      .test('cpf', 'CPF inválido', value => cpf.isValid(value))
+      .required('CPF é obrigatório'),
+    password: yup.string().required('Senha é obrigatória'),
   })
   .required();
+
+
 const LoginForm = () => {
   const [login, { isLoading, isError, error, isSuccess }] = useLoginMutation();
 
@@ -62,12 +69,12 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 ">
       <Textinput
-        name="username"
-        label="Usuário"
-        defaultValue="01585478932"
+        name="cpf"
+        label="CPF"
+        defaultValue="39935887030"
         type="string"
         register={register}
-        error={errors.string}
+        error={errors.cpf}
         className="h-[48px]"
       />
       <Textinput

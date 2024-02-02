@@ -8,6 +8,7 @@ const Dashboard = lazy(() => import("./pages/dashboard"));
 import Layout from "./layout/Layout";
 import AuthLayout from "./layout/AuthLayout";
 import Login from "./pages/auth/login";
+import ForgotPassword from "./pages/auth/forgot-password";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AuthLayout />}>
           <Route path="/" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Route>
         <Route path="/*" element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />
