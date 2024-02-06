@@ -33,10 +33,10 @@ const authServerConfig = (server) => {
     "/",
     (schema, request) => {
       const requestData = JSON.parse(request.requestBody);
-      const { email, password } = requestData;
+      const { cpf, password } = requestData;
 
       // Find the user by email
-      const user = schema.users.findBy({ email });
+      const user = schema.users.findBy({ cpf });
 
       if (!user) {
         return new Response(400, {}, { error: "Invalid credentials" });

@@ -6,6 +6,7 @@ import Icon from "@/components/ui/Icon";
 const Breadcrumbs = () => {
   const location = useLocation();
   const locationName = location.pathname.replace("/", "");
+  const decodedLocationName = decodeURIComponent(locationName)
 
   const [isHide, setIsHide] = useState(null);
   const [groupTitle, setGroupTitle] = useState("");
@@ -51,7 +52,7 @@ const Breadcrumbs = () => {
               </li>
             )}
             <li className="capitalize text-slate-500 dark:text-slate-400">
-              {locationName}
+              {decodedLocationName}
             </li>
           </ul>
         </div>

@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import Checkbox from "@/components/ui/Checkbox";
 import Button from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -38,7 +37,9 @@ const LoginForm = () => {
     //
     mode: "all",
   });
+
   const navigate = useNavigate();
+
   const onSubmit = async (data) => {
     try {
       const response = await login(data);
@@ -52,13 +53,13 @@ const LoginForm = () => {
       }
 
       if (!response.data.token) {
-        throw new Error("Invalid credentials");
+        throw new Error("Credenciais Invalidas");
       }
 
       dispatch(setUser(data));
-      navigate("/dashboard");
+      navigate("/inicio");
       localStorage.setItem("user", JSON.stringify(response.data.user));
-      toast.success("Login Successful");
+      toast.success("Seja bem-vindo!");
     } catch (error) {
       toast.error(error.message);
     }
