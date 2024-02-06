@@ -21,8 +21,8 @@ createServer({
 
   seeds(server) {
     server.create("user", {
-      email: "dashcode@gmail.com",
-      password: "dashcode",
+      cpf: "39935887030",
+      password: "agendaSus",
     });
     products.forEach((product, i) => {
       server.create("product", {

@@ -12,8 +12,6 @@ import Icon from "@/components/ui/Icon";
 
 // import images
 import MobileLogo from "@/assets/images/logo/logo-c.svg";
-import MobileLogoWhite from "@/assets/images/logo/logo-c-white.svg";
-import svgRabitImage from "@/assets/images/svg/rabit.svg";
 
 const MobileMenu = ({ className = "custom-class" }) => {
   const scrollableNodeRef = useRef();
@@ -42,15 +40,11 @@ const MobileMenu = ({ className = "custom-class" }) => {
         <Link to="/dashboard">
           <div className="flex items-center space-x-4">
             <div className="logo-icon">
-              {!isDark && !isSemiDark ? (
-                <img src={MobileLogo} alt="" />
-              ) : (
-                <img src={MobileLogoWhite} alt="" />
-              )}
+              <img src={MobileLogo} alt="" />
             </div>
             <div>
               <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                DashCode
+                AgendaSUS
               </h1>
             </div>
           </div>
@@ -65,9 +59,8 @@ const MobileMenu = ({ className = "custom-class" }) => {
       </div>
 
       <div
-        className={`h-[60px]  absolute top-[80px] nav-shadow z-[1] w-full transition-all duration-200 pointer-events-none ${
-          scroll ? " opacity-100" : " opacity-0"
-        }`}
+        className={`h-[60px]  absolute top-[80px] nav-shadow z-[1] w-full transition-all duration-200 pointer-events-none ${scroll ? " opacity-100" : " opacity-0"
+          }`}
       ></div>
       <SimpleBar
         className="sidebar-menu px-4 h-[calc(100%-80px)]"

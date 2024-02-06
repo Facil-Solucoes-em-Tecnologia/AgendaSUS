@@ -63,7 +63,7 @@ const Navmenu = ({ menus }) => {
         });
       }
     });
-    document.title = `Dashcode  | ${locationName}`;
+    document.title = `AgendaSUS  | ${locationName}`;
 
     setActiveSubmenu(submenuIndex);
     setMultiMenu(multiMenuIndex);
@@ -100,11 +100,10 @@ const Navmenu = ({ menus }) => {
             {/*    !!sub menu parent   */}
             {item.child && (
               <div
-                className={`menu-link ${
-                  activeSubmenu === i
+                className={`menu-link ${activeSubmenu === i
                     ? "parent_active not-collapsed"
                     : "collapsed"
-                }`}
+                  }`}
                 onClick={() => toggleSubmenu(i)}
               >
                 <div className="flex-1 flex items-start">
@@ -115,9 +114,8 @@ const Navmenu = ({ menus }) => {
                 </div>
                 <div className="flex-0">
                   <div
-                    className={`menu-arrow transform transition-all duration-300 ${
-                      activeSubmenu === i ? " rotate-90" : ""
-                    }`}
+                    className={`menu-arrow transform transition-all duration-300 ${activeSubmenu === i ? " rotate-90" : ""
+                      }`}
                   >
                     <Icon icon="heroicons-outline:chevron-right" />
                   </div>
