@@ -28,6 +28,7 @@ const CalendarPage = () => {
     isError,
     error,
   } = useGetCalendarEventsQuery();
+  const [selectedUBS, setSelectedUBS] = useState('');
   const [createCalendarEvent] = useCreateCalendarEventMutation();
   const [editCalendarEvent] = useEditCalendarEventMutation();
   const [deleteCalendarEvent] = useDeleteCalendarEventMutation();
@@ -147,13 +148,28 @@ const CalendarPage = () => {
     return <div>Error... {error.message}</div>;
   }
   return (
+    
     <div className="dashcode-calender">
       <div className="grid grid-cols-12 gap-4">
+        
         <Card className="lg:col-span-3 col-span-12">
+          <div className="mb-4">
+            <label htmlFor="ubs-select" className="block text-sm font-medium text-gray-700">Escolha a UBS:</label>
+            <select
+              id="ubs-select"
+              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+              value={selectedUBS}
+              onChange={(e) => setSelectedUBS(e.target.value)}
+            >
+              <option value="">Selecione uma opção</option>
+              <option value="residencia">UBS Residência - Cruzeiro velho</option>
+              <option value="trabalho">UBS Trabalho - Lago norte</option>
+            </select>
+          </div>
           <Button
             icon="heroicons-outline:plus"
             text=" Adicionar agendamento"
-            className="btn-dark w-full block   "
+            className="mt-2 btn-dark w-full block   "
             onClick={() => {
               setShowModal(!showModal);
             }}
