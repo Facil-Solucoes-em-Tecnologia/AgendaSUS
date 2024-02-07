@@ -12,7 +12,7 @@ export const menuItems = [
   {
     title: "Estabelecimentos",
     icon: "heroicons-outline:building-office-2",
-    link: "inicio",
+    link: "estabelecimentos",
   },
   {
     title: "Serviços",

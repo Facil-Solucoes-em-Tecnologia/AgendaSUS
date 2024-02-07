@@ -11,6 +11,8 @@ import Login from "./pages/auth/login";
 import ForgotPassword from "./pages/auth/forgot-password";
 import Profile from "./pages/usuarios";
 import Agendamento from "./pages/agendamento"
+import EstabelecimentoPage from "./pages/estabelecimento";
+import EstabelecimentoAddPage from "./pages/estabelecimento/common/estabelecimento-add";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="inicio" element={<Dashboard />} />
           <Route path="usuario" element={<Profile />} />
           <Route path="agendamento" element={<Agendamento />} />
+          <Route path="estabelecimentos" element={<EstabelecimentoPage />} />
+          <Route path="estabelecimentos-add" element={<EstabelecimentoAddPage />} />
         </Route>
       </Routes>
     </main>
