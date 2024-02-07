@@ -9,7 +9,7 @@ import Layout from "./layout/Layout";
 import AuthLayout from "./layout/AuthLayout";
 import Login from "./pages/auth/login";
 import ForgotPassword from "./pages/auth/forgot-password";
-import Users from "./pages/usuarios/usuario-wizard";
+import Profile from "./pages/usuarios";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         </Route>
         <Route path="/*" element={<Layout />}>
           <Route path="inicio" element={<Dashboard />} />
-          <Route path="usuario" element={<Users />} />
+          <Route path="usuario" element={<Profile />} />
         </Route>
       </Routes>
     </main>
