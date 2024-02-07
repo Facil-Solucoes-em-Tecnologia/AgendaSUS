@@ -10,6 +10,7 @@ import AuthLayout from "./layout/AuthLayout";
 import Login from "./pages/auth/login";
 import ForgotPassword from "./pages/auth/forgot-password";
 import Profile from "./pages/usuarios";
+import Agendamento from "./pages/agendamento"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/*" element={<Layout />}>
           <Route path="inicio" element={<Dashboard />} />
           <Route path="usuario" element={<Profile />} />
+          <Route path="agendamento" element={<Agendamento />} />
         </Route>
       </Routes>
     </main>

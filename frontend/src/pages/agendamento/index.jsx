@@ -37,10 +37,10 @@ const CalendarPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [editEvent, setEditEvent] = useState(null);
   const [events] = useState([
-    { title: "New Event Planning", id: "1", tag: "business" },
-    { title: "Meeting", id: "2", tag: "meeting" },
-    { title: "Generating Reports", id: "3", tag: "holiday" },
-    { title: "Create New theme", id: "4", tag: "etc" },
+    { title: "Consulta médica", id: "1", tag: "business" },
+    { title: "Farmácia", id: "2", tag: "meeting" },
+    { title: "Vacina", id: "3", tag: "holiday" },
+    { title: "Coleta exame", id: "4", tag: "etc" },
   ]);
   const [showModal, setShowModal] = useState(false);
 
@@ -161,7 +161,7 @@ const CalendarPage = () => {
 
           <div id="external-events" className=" space-y-1.5 mt-6 ">
             <p className=" text-sm pb-2">
-              Drag and drop your event or click in the calendar
+              Arraste e solte o evento abaixo desejado ou clique no calendário
             </p>
             {events.map((event) => (
               <ExternalDraggingevent key={event.id} event={event} />

@@ -2,42 +2,30 @@ const calendarServerConfig = (server) => {
   server.get("/categories", () => {
     return [
       {
-        label: "Business",
+        label: "Consulta médica",
         value: "business",
         activeClass: "ring-primary-500 bg-primary-500",
         className: " group-hover:border-blue-500",
       },
       {
-        label: "Personal",
-        value: "personal",
-
-        activeClass: "ring-success-500 bg-success-500",
-        className: " group-hover:border-green-500",
-      },
-      {
-        label: "Holiday",
+        label: "Vacina",
         value: "holiday",
         activeClass: "ring-danger-500 bg-danger-500",
         className: " group-hover:border-red-500",
       },
       {
-        label: "Family",
+        label: "Coleta exame",
         value: "family",
         activeClass: "ring-info-500 bg-info-500",
         className: " group-hover:border-cyan-500",
       },
       {
-        label: "Meeting",
+        label: "Farmácia",
         value: "meeting",
         activeClass: "ring-warning-500 bg-warning-500",
         className: " group-hover:border-yellow-500",
       },
-      {
-        label: "Etc",
-        value: "etc",
-        activeClass: "ring-info-500 bg-info-500",
-        className: " group-hover:border-cyan-500",
-      },
+
     ];
   });
 
