@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Modal from "@/components/ui/Modal";
-import Textinput from "@/components/ui/Textinput";
-import { useForm, Controller } from "react-hook-form";
 import Select from "@/components/ui/Select";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useSelector, useDispatch } from "react-redux";
-
-import Flatpickr from "react-flatpickr";
-import FormGroup from "@/components/ui/FormGroup";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import Flatpickr from "react-flatpickr";
+import FormGroup from "@/components/ui/FormGroup";
+
 const EventModal = ({
   showModal,
   onClose,
@@ -26,17 +24,9 @@ const EventModal = ({
 
   const FormValidationSchema = yup
     .object({
-      title: yup.string().required("Nome do evento é obrigatório"),
-
-      cata: yup
-        .string()
-        .when("title", {
-          is: (title) => title.length > 0,
-          then: yup.string().required("Categoria é obrigatório"),
-
-          otherwise: yup.string().notRequired(),
-        })
-        .required("Categoria é obrigatório"),
+      // Remova a validação para o título do evento
+      cata: yup.string().required("Categoria é obrigatório"),
+      // Adicione validação para o novo campo de horário se necessário
     })
     .required();
 
@@ -70,6 +60,7 @@ const EventModal = ({
       start: startDate,
       end: endDate,
       allDay: false,
+      time: data.time,
       extendedProps: {
         calendar: data.cata,
       },
@@ -119,27 +110,21 @@ const EventModal = ({
         onClose={onClose}
       >
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 ">
-          <Textinput
-            name="title"
-            label="Nome do evento"
-            type="text"
-            placeholder=""
+          <Select
+            label="Agenda"
+            options={categories}
             register={register}
-            error={errors.title}
-            defaultValue={event ? event.event.title : ""}
+            error={errors.cata}
+            name="cata"
           />
 
-          <FormGroup
-            label="Data sugerida"
-            id="default-picker"
-            error={errors.startDate}
-          >
+          <FormGroup label="Data sugerida" id="default-picker" error={errors.startDate}>
             <Controller
               name="startDate"
               control={control}
               render={({ field }) => (
                 <Flatpickr
-                  className="text-control py-2"
+                  className="text-control py-2 border border-gray-300 rounded-md focus:ring focus:border-blue-300"
                   id="default-picker"
                   placeholder="yyyy, dd M"
                   value={startDate}
@@ -153,37 +138,17 @@ const EventModal = ({
               )}
             />
           </FormGroup>
-          <FormGroup
-            label="Horário"
-            id="default-picker2"
-            error={errors.endDate}
-          >
-            <Controller
-              name="endDate"
-              control={control}
-              render={({ field }) => (
-                <Flatpickr
-                  className="text-control py-2"
-                  id="default-picker2"
-                  placeholder=""
-                  value={endDate}
-                  onChange={(date) => setEndDate(date[0])}
-                  options={{
-                    altInput: true,
-                    altFormat: "F j, Y",
-                    dateFormat: "Y-m-d",
-                  }}
-                />
-              )}
-            />
+
+          <FormGroup label="Horário" id="time-picker">
+            <select
+              className="form-select appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md text-base focus:outline-none focus:ring focus:border-blue-300"
+              {...register("time")}
+            >
+              <option value="morning">Manhã</option>
+              <option value="afternoon">Tarde</option>
+            </select>
           </FormGroup>
-          <Select
-            label="Agenda"
-            options={categories}
-            register={register}
-            error={errors.cata}
-            name="cata"
-          />
+
           <div className="ltr:text-right rtl:text-left  space-x-3">
             {event && (
               <button
