@@ -36,7 +36,11 @@ function EstabelecimentoAddEdit(data) {
   }
 
   const salvar = () => {
-    toast.success("Estabelecimento criado com sucesso");
+    if (editar()) {
+      toast.success("Dados alterados com sucesso");
+    } else {
+      toast.success("Estabelecimento criado com sucesso");
+    }
     navigate('/estabelecimentos');
   };
 
