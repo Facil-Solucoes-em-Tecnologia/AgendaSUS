@@ -51,7 +51,7 @@ const EstabelecimentoPage = () => {
             name: "editar",
             icon: "heroicons:pencil-square",
             doit: (id) => {
-                navigate("/invoice-edit");
+                navigate(`/estabelecimentos/${id}`);
             },
         },
         {
@@ -117,7 +117,7 @@ const EstabelecimentoPage = () => {
             
              `}
                         >
-                            {row?.cell?.value}
+                            {row?.cell?.value === "S" ? "Ativo" : "Inativo"}
                         </span>
                     </span>
                 );
@@ -141,7 +141,7 @@ const EstabelecimentoPage = () => {
                                 {actions.map((item, i) => (
                                     <div
                                         key={i}
-                                        onClick={() => item.doit()}
+                                        onClick={() => item.doit(row?.row?.original?.id)}
                                         className={`
                 
                   ${item.name === "delete"
@@ -232,7 +232,7 @@ const EstabelecimentoPage = () => {
                             className=" btn-outline-secondary text-slate-600 dark:border-slate-700 dark:text-slate-300 font-normal btn-sm "
                             iconClass="text-lg"
                         />
-                        <Button
+                        {/* <Button
                             icon="heroicons-outline:arrow-down-on-square-stack"
                             text="Importar do CNES"
                             className=" btn-dark font-normal btn-sm "
@@ -240,14 +240,14 @@ const EstabelecimentoPage = () => {
                             onClick={() => {
                                 navigate("/invoice-add");
                             }}
-                        />
+                        /> */}
                         <Button
                             icon="heroicons-outline:plus-sm"
                             text="Adicionar Estabelecimento"
                             className=" btn-dark font-normal btn-sm "
                             iconClass="text-lg"
                             onClick={() => {
-                                navigate("/estabelecimentos-add");
+                                navigate("/incluir-estabelecimento");
                             }}
                         />
                     </div>
