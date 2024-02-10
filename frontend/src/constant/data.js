@@ -17,7 +17,7 @@ export const menuItems = [
   {
     title: "Serviços",
     icon: "heroicons-outline:user-group",
-    link: "inicio",
+    link: "servicos",
   },
   // {
   //   title: "Gestão de Estabelecimentos",

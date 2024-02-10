@@ -43,15 +43,15 @@ const EstabelecimentoPage = () => {
         {
             name: "Visualizar",
             icon: "heroicons-outline:eye",
-            doit: () => {
-                navigate("/invoice-preview");
+            doit: (id) => {
+                navigate(`/estabelecimentos/visualizar/${id}`);
             },
         },
         {
             name: "editar",
             icon: "heroicons:pencil-square",
             doit: (id) => {
-                navigate(`/estabelecimentos/${id}`);
+                navigate(`/estabelecimentos/editar/${id}`);
             },
         },
         {
@@ -247,7 +247,7 @@ const EstabelecimentoPage = () => {
                             className=" btn-dark font-normal btn-sm "
                             iconClass="text-lg"
                             onClick={() => {
-                                navigate("/incluir-estabelecimento");
+                                navigate("/estabelecimentos/adicionar");
                             }}
                         />
                     </div>
