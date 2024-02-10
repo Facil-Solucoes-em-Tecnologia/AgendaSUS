@@ -44,6 +44,10 @@ function EstabelecimentoAddEdit(data) {
     navigate('/estabelecimentos');
   };
 
+  const voltar = () => {
+    navigate('/estabelecimentos');
+  };
+
   return (
     <Card title={editar() ? "Atualizar Estabelecimento" : "Novo Estabelecimento"}>
       <div className="grid grid-rows-3 grid-cols-1 sm:grid-cols-6 md:grid-cols-6 gap-4">
@@ -128,8 +132,18 @@ function EstabelecimentoAddEdit(data) {
       <div className="mt-5">
         <HorarioFuncionamento />
       </div>
-      <div className="ltr:text-right rtl:text-left space-x-3 rtl:space-x-reverse mt-10">
-        <Button text={editar() ? "Atualizar" : "Salvar"} className="btn-dark" onClick={salvar} />
+      <div class="grid grid-cols-2 mt-5 gap-4">
+        <div className="col-span-1 text-left space-x-3 rtl:space-x-reverse justify-items-start">
+          <Button
+            icon="heroicons-outline:arrow-left"
+            text="Voltar"
+            className=" btn-dark shadow-base2"
+            onClick={voltar}
+          />
+        </div>
+        <div className="col-span-1 text-right space-x-3 rtl:space-x-reverse justify-items-end">
+          <Button text={editar() ? "Atualizar" : "Salvar"} className="btn-dark" onClick={salvar} icon="heroicons-outline:save" />
+        </div>
       </div>
     </Card >
   );

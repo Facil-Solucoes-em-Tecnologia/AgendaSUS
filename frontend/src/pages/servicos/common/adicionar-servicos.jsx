@@ -42,6 +42,10 @@ export default function ServicoAddEdit() {
         navigate('/servicos');
     };
 
+    const voltar = () => {
+        navigate('/servicos');
+    };
+
     return (
         <div>
             <Card title={editar() ? "Atualizar Serviço" : "Novo Serviço"}>
@@ -147,8 +151,18 @@ export default function ServicoAddEdit() {
                 <div className="my-6">
                     <Repeater />
                 </div>
-                <div className="ltr:text-right rtl:text-left space-x-3 rtl:space-x-reverse">
-                    <Button text={editar() ? "Atualizar" : "Salvar"} className="btn-dark" onClick={salvar} />
+                <div class="grid grid-cols-2 gap-4">
+                    <div className="col-span-1 text-left space-x-3 rtl:space-x-reverse justify-items-start">
+                        <Button
+                            icon="heroicons-outline:arrow-left"
+                            text="Voltar"
+                            className=" btn-dark shadow-base2"
+                            onClick={voltar}
+                        />
+                    </div>
+                    <div className="col-span-1 text-right space-x-3 rtl:space-x-reverse justify-items-end">
+                        <Button text={editar() ? "Atualizar" : "Salvar"} className="btn-dark" onClick={salvar} icon="heroicons-outline:save" />
+                    </div>
                 </div>
             </Card>
         </div>
