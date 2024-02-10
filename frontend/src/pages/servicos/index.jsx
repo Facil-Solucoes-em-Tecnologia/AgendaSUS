@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { constunidadesDF } from "../../constant/table-data";
+import { servicosEstabelcimento } from "../../constant/table-data";
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Dropdown from "@/components/ui/Dropdown";
@@ -38,44 +38,44 @@ const IndeterminateCheckbox = React.forwardRef(
     }
 );
 
-const EstabelecimentoPage = () => {
-    const navigate = useNavigate();
-    const [estabelecimentos, setEstabelecimentos] = useState(constunidadesDF);
+const ServicosPage = () => {
+    const [servicos, setServicos] = useState(servicosEstabelcimento);
 
     const handleDelete = (id) => {
         Swal.fire({
-            title: "Deseja remover este estabelecimento?",
-            text: "Ao remover um estabelecimento, seu catálogo de serviços e agendas vinculadas a ele serão removidas também.",
+            title: "Deseja remover este serviço?",
+            text: "Ao remover um serviço todas as agendas vinculadas a ele serão removidas também.",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#22c55e",
             cancelButtonColor: "#ef4444",
-            confirmButtonText: "Excluir Estabelecimento",
+            confirmButtonText: "Excluir Serviço",
         }).then((result) => {
             if (result.isConfirmed) {
                 onDelete(id);
-                Swal.fire("Deletado!", "O estabelecimento, catalogo de serviços e agendas relacionados a ele foram excluídos!", "success");
+                Swal.fire("Deletado!", "O serviço e todas as agendas relacionados a ele foram excluídas!", "success");
             }
         });
     };
 
     const onDelete = (id) => {
-        setEstabelecimentos(estabelecimentos.filter((item) => item.id !== id));
+        setServicos(servicos.filter((item) => item.id !== id));
     };
 
+    const navigate = useNavigate();
     const actions = [
         {
             name: "Visualizar",
             icon: "heroicons-outline:eye",
             doit: (id) => {
-                navigate(`/estabelecimentos/visualizar/${id}`);
+                navigate(`/servicos/visualizar/${id}`);
             },
         },
         {
             name: "editar",
             icon: "heroicons:pencil-square",
             doit: (id) => {
-                navigate(`/estabelecimentos/editar/${id}`);
+                navigate(`/servicos/editar/${id}`);
             },
         },
         {
@@ -95,36 +95,28 @@ const EstabelecimentoPage = () => {
             },
         },
         {
-            Header: "CNES",
-            accessor: "codigo_cnes",
+            Header: "Serviço",
+            accessor: "servico",
             Cell: (row) => {
                 return <span>{row?.cell?.value}</span>;
             },
         },
         {
-            Header: "Estabelecimento",
-            accessor: "estabelcimento",
+            Header: "Categoria",
+            accessor: "tipoServico",
             Cell: (row) => {
-                return (
-                    <div>
-                        <span className="inline-flex items-center">
-                            <span className="w-7 h-7 rounded-full ltr:mr-3 rtl:ml-3 flex-none bg-slate-600">
-                                <img
-                                    src={row?.value.image}
-                                    alt=""
-                                    className="object-cover w-full h-full rounded-full"
-                                />
-                            </span>
-                            <span className="text-sm text-slate-600 dark:text-slate-300 capitalize">
-                                {row?.value.nome_razao_social}
-                            </span>
-                        </span>
-                    </div>
-                );
+                return <span>{row?.cell?.value}</span>;
             },
         },
         {
-            Header: "status",
+            Header: "Profissional",
+            accessor: "profissional",
+            Cell: (row) => {
+                return <span>{row?.cell?.value}</span>;
+            },
+        },
+        {
+            Header: "Status",
             accessor: "status",
             Cell: (row) => {
                 return (
@@ -190,7 +182,7 @@ const EstabelecimentoPage = () => {
     ];
 
     const columns = useMemo(() => COLUMNS, []);
-    const data = useMemo(() => estabelecimentos, [estabelecimentos]);
+    const data = useMemo(() => servicos, [servicos]);
 
     const tableInstance = useTable(
         {
@@ -246,7 +238,7 @@ const EstabelecimentoPage = () => {
     return (
         <Card noborder>
             <div className="md:flex pb-6 items-center">
-                <h6 className="flex-1 md:mb-0 mb-3">Estabelecimentos de Saúde</h6>
+                <h6 className="flex-1 md:mb-0 mb-3">Serviços Ofertados</h6>
                 <div className="md:flex md:space-x-3 items-center flex-none rtl:space-x-reverse">
                     <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
                     <Button
@@ -266,11 +258,11 @@ const EstabelecimentoPage = () => {
                         /> */}
                     <Button
                         icon="heroicons-outline:plus-sm"
-                        text="Adicionar Estabelecimento"
+                        text="Adicionar Serviço"
                         className=" btn-dark font-normal btn-sm "
                         iconClass="text-lg"
                         onClick={() => {
-                            navigate("/estabelecimentos/adicionar");
+                            navigate("/servicos/adicionar");
                         }}
                     />
                 </div>
@@ -399,4 +391,4 @@ const EstabelecimentoPage = () => {
     );
 };
 
-export default EstabelecimentoPage;
+export default ServicosPage;

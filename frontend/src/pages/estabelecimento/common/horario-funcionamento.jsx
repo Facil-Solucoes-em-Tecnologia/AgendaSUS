@@ -6,16 +6,7 @@ import Button from "@/components/ui/Button";
 import Select from "react-select";
 import { useForm, useFieldArray } from "react-hook-form";
 import Flatpickr from "react-flatpickr";
-
-const dias = [
-    { value: "Segunda-feira", label: "Segunda-Feira" },
-    { value: "Terça-feira", label: "Terça-feira" },
-    { value: "Quarta-feira", label: "Quarta-feira" },
-    { value: "Quinta-feira", label: "Quinta-feira" },
-    { value: "Sexta-feira", label: "Sexta-feira" },
-    { value: "Sábado", label: "Sábado" },
-    { value: "Domingo", label: "Domingo" },
-];
+import { dias } from "@/constant/optionsSelects";
 
 const styles = {
     option: (provided, state) => ({
