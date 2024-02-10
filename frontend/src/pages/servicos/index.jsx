@@ -4,7 +4,7 @@ import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import Dropdown from "@/components/ui/Dropdown";
 import Button from "@/components/ui/Button";
-import Modal from "@/components/ui/Modal";
+import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
 import {
@@ -39,7 +39,28 @@ const IndeterminateCheckbox = React.forwardRef(
 );
 
 const ServicosPage = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [servicos, setServicos] = useState(servicosEstabelcimento);
+
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Deseja remover este serviço?",
+            text: "Ao remover um serviço todas as agendas vinculadas a ele serão removidas também.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#22c55e",
+            cancelButtonColor: "#ef4444",
+            confirmButtonText: "Excluir Serviço",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                onDelete(id);
+                Swal.fire("Deletado!", "O serviço e todas as agendas relacionados a ele foram excluídas!", "success");
+            }
+        });
+    };
+
+    const onDelete = (id) => {
+        setServicos(servicos.filter((item) => item.id !== id));
+    };
 
     const navigate = useNavigate();
     const actions = [
@@ -61,7 +82,7 @@ const ServicosPage = () => {
             name: "Excluir",
             icon: "heroicons-outline:trash",
             doit: (id) => {
-                setIsModalOpen(true);
+                handleDelete(id);
             },
         },
     ];
@@ -161,7 +182,7 @@ const ServicosPage = () => {
     ];
 
     const columns = useMemo(() => COLUMNS, []);
-    const data = useMemo(() => servicosEstabelcimento, []);
+    const data = useMemo(() => servicos, [servicos]);
 
     const tableInstance = useTable(
         {

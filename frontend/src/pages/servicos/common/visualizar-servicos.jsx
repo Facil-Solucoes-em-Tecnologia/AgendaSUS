@@ -134,16 +134,12 @@ export default function ServicosView() {
                     <Repeater />
                 </div>
                 <div className="ltr:text-right rtl:text-left space-x-3 rtl:space-x-reverse">
-                    <Button className="btn-dark" onClick={salvar}>
-                        <div className="grid grid-cols-2">
-                            <div className="col-span-1">
-                                <Icon icon="heroicons:arrow-left" />
-                            </div>
-                            <div className="col-span-1">
-                                <p>Voltar</p>
-                            </div>
-                        </div>
-                    </Button>
+                    <Button
+                        icon="heroicons-outline:arrow-left"
+                        text="Voltar"
+                        className=" btn-dark shadow-base2"
+                        onClick={salvar}
+                    />
                 </div>
             </Card>
         </div>

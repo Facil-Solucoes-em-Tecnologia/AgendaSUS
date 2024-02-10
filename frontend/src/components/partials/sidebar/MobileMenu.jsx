@@ -11,7 +11,7 @@ import useMobileMenu from "@/hooks/useMobileMenu";
 import Icon from "@/components/ui/Icon";
 
 // import images
-import MobileLogo from "@/assets/images/logo/logo-c.svg";
+import MobileLogo from "@/assets/images/logo/logo.svg";
 
 const MobileMenu = ({ className = "custom-class" }) => {
   const scrollableNodeRef = useRef();
@@ -41,11 +41,6 @@ const MobileMenu = ({ className = "custom-class" }) => {
           <div className="flex items-center space-x-4">
             <div className="logo-icon">
               <img src={MobileLogo} alt="" />
-            </div>
-            <div>
-              <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                AgendaSUS
-              </h1>
             </div>
           </div>
         </Link>
