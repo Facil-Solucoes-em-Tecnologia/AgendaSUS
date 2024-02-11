@@ -21,7 +21,7 @@ export const menuItems = [
   },
   {
     title: "Gerenciar Agenda",
-    icon: "heroicons-outline:wrench",
+    icon: "heroicons-outline:calendar-days",
     link: "gerenciar",
   },
   // {

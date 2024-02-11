@@ -1562,7 +1562,7 @@ export const atendimentos = [
     servico: "Consulta Médica",
     datahora: "10/02/2024 10:00:00",
     profissional: "Dr. Profissional 1",
-    status: "Aguarda Confirmação"
+    status: "Atendido"
   },
   {
     id: 2,
@@ -1601,7 +1601,7 @@ export const atendimentos = [
     servico: "Consulta Médica",
     datahora: "10/02/2024 11:30:00",
     profissional: "Dr. Profissional 1",
-    status: "Aguarda Confirmação"
+    status: "Atendido"
   },
   {
     id: 5,

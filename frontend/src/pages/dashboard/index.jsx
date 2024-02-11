@@ -2,8 +2,19 @@ import React, { useState } from "react";
 import Card from "@/components/ui/Card";
 import Agenda from "@/assets/images/svg/agenda.svg";
 import MinhaAgenda from "@/assets/images/svg/minhaAgenda.svg";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const criarAgendamento = () => {
+    navigate("/agendamento");
+  }
+
+  const meusAgendamentos = () => {
+    navigate("/agendamento/listar");
+  }
+
   return (
     <div>
       <Card title="Agenda SUS">
@@ -22,7 +33,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="mt-6">
-              <button className="btn bg-white hover:bg-opacity-80 text-slate-900 btn-sm w-full block">
+              <button className="btn bg-white hover:bg-opacity-80 text-slate-900 btn-sm w-full block" onClick={criarAgendamento}>
                 Criar Agendamento
               </button>
             </div>
@@ -41,7 +52,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="mt-6">
-              <button className="btn bg-white hover:bg-opacity-80 text-slate-900 btn-sm w-full block">
+              <button className="btn bg-white hover:bg-opacity-80 text-slate-900 btn-sm w-full block" onClick={meusAgendamentos}>
                 Minha Agenda de Cuidado
               </button>
             </div>
