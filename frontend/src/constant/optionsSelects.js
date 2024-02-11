@@ -67,3 +67,8 @@ export const dias = [
     { value: "Domingo", label: "Domingo" },
 ];
 
+export const acaoOption = [
+    { value: "aceitar", label: "Aceitar" },
+    { value: "rejeitar", label: "Rejeitar" },
+];
+

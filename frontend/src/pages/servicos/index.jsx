@@ -14,6 +14,7 @@ import {
     useGlobalFilter,
     usePagination,
 } from "react-table";
+
 import GlobalFilter from "../table/react-tables/GlobalFilter";
 
 const IndeterminateCheckbox = React.forwardRef(

@@ -17,6 +17,7 @@ import EstabelcimentoView from "./pages/estabelecimento/common/estabelecimento-v
 import ServicosPage from "./pages/servicos";
 import ServicosAddEdit from "./pages/servicos/common/adicionar-servicos";
 import ServicosView from "./pages/servicos/common/visualizar-servicos";
+import GerenciarAgenda from "./pages/gerenciar-agenda";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="servicos/adicionar" element={<ServicosAddEdit />} />
           <Route path="servicos/editar/:id" element={<ServicosAddEdit />} />
           <Route path="servicos/visualizar/:id" element={<ServicosView />} />
+          <Route path="gerenciar" element={<GerenciarAgenda />} />
         </Route>
       </Routes>
     </main>

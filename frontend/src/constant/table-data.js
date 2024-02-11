@@ -1549,6 +1549,244 @@ export const constunidadesDF = [
   }
 ]
 
+import user from "../assets/images/users/user-2.jpg";
+export const atendimentos = [
+  {
+    id: 1,
+    usuario: {
+      image: user,
+      nome: "Usuário 1",
+      endereco: "Rua A, 123",
+      telefone: "(11) 1234-5678"
+    },
+    servico: "Consulta Médica",
+    datahora: "10/02/2024 10:00:00",
+    profissional: "Dr. Profissional 1",
+    status: "Aguarda Confirmação"
+  },
+  {
+    id: 2,
+    usuario: {
+      image: user,
+      nome: "Usuário 2",
+      endereco: "Rua B, 456",
+      telefone: "(22) 9876-5432"
+    },
+    servico: "Exame de Rotina",
+    datahora: "12/02/2024 15:30:00",
+    profissional: "Dra. Profissional 2",
+    status: "Confirmado"
+  },
+  {
+    id: 3,
+    usuario: {
+      image: user,
+      nome: "Usuário 3",
+      endereco: "Rua C, 789",
+      telefone: "(33) 5555-1212"
+    },
+    servico: "Atendimento Odontológico",
+    datahora: "15/02/2024 08:30:00",
+    profissional: "Dr. Dentista",
+    status: "Cancelado"
+  },
+  {
+    id: 4,
+    usuario: {
+      image: user,
+      nome: "Usuário 1",
+      endereco: "Rua A, 123",
+      telefone: "(11) 1234-5678"
+    },
+    servico: "Consulta Médica",
+    datahora: "10/02/2024 11:30:00",
+    profissional: "Dr. Profissional 1",
+    status: "Aguarda Confirmação"
+  },
+  {
+    id: 5,
+    usuario: {
+      image: user,
+      nome: "Usuário 2",
+      endereco: "Rua B, 456",
+      telefone: "(22) 9876-5432"
+    },
+    servico: "Exame de Rotina",
+    datahora: "10/02/2024 09:30:00",
+    profissional: "Dra. Profissional 2",
+    status: "Confirmado"
+  },
+  {
+    id: 6,
+    usuario: {
+      image: user,
+      nome: "Usuário 3",
+      endereco: "Rua C, 789",
+      telefone: "(33) 5555-1212"
+    },
+    servico: "Atendimento Odontológico",
+    datahora: "12/02/2024 09:00:00",
+    profissional: "Dr. Dentista",
+    status: "Cancelado"
+  },
+  {
+    id: 7,
+    usuario: {
+      image: user,
+      nome: "Usuário 4",
+      endereco: "Rua D, 246",
+      telefone: "(44) 8765-4321"
+    },
+    servico: "Consulta Pediátrica",
+    datahora: "12/02/2024 10:00:00",
+    profissional: "Dra. Pediatra",
+    status: "Aguarda Confirmação"
+  },
+  {
+    id: 8,
+    usuario: {
+      image: user,
+      nome: "Usuário 5",
+      endereco: "Rua E, 789",
+      telefone: "(55) 1234-5678"
+    },
+    servico: "Exame de Sangue",
+    datahora: "12/02/2024 08:45:00",
+    profissional: "Dr. Laboratorista",
+    status: "Confirmado"
+  },
+  {
+    id: 9,
+    usuario: {
+      image: user,
+      nome: "Usuário 6",
+      endereco: "Rua F, 101",
+      telefone: "(66) 9876-5432"
+    },
+    servico: "Consulta Oftalmológica",
+    datahora: "13/02/2024 08:50:00",
+    profissional: "Dr. Oftalmologista",
+    status: "Cancelado"
+  },
+  {
+    id: 10,
+    usuario: {
+      image: user,
+      nome: "Usuário 1",
+      endereco: "Rua A, 123",
+      telefone: "(11) 1234-5678"
+    },
+    servico: "Consulta Médica",
+    datahora: "16/02/2024 11:00:00",
+    profissional: "Dr. Profissional 1",
+    status: "Aguarda Confirmação"
+  },
+  {
+    id: 11,
+    usuario: {
+      image: user,
+      nome: "Usuário 2",
+      endereco: "Rua B, 456",
+      telefone: "(22) 9876-5432"
+    },
+    servico: "Exame de Rotina",
+    datahora: "18/02/2024 15:30:00",
+    profissional: "Dra. Profissional 2",
+    status: "Confirmado"
+  },
+  {
+    id: 12,
+    usuario: {
+      image: user,
+      nome: "Usuário 3",
+      endereco: "Rua C, 789",
+      telefone: "(33) 5555-1212"
+    },
+    servico: "Atendimento Odontológico",
+    datahora: "12/02/2024 16:30:00",
+    profissional: "Dr. Dentista",
+    status: "Cancelado"
+  },
+  {
+    id: 13,
+    usuario: {
+      image: user,
+      nome: "Usuário 4",
+      endereco: "Rua D, 246",
+      telefone: "(44) 8765-4321"
+    },
+    servico: "Consulta Pediátrica",
+    datahora: "12/02/2024 17:30:00",
+    profissional: "Dra. Pediatra",
+    status: "Aguarda Confirmação"
+  },
+  {
+    id: 14,
+    usuario: {
+      image: user,
+      nome: "Usuário 5",
+      endereco: "Rua E, 789",
+      telefone: "(55) 1234-5678"
+    },
+    servico: "Exame de Sangue",
+    datahora: "12/02/2024 16:00:00",
+    profissional: "Dr. Laboratorista",
+    status: "Confirmado"
+  },
+  {
+    id: 15,
+    usuario: {
+      image: user,
+      nome: "Usuário 6",
+      endereco: "Rua F, 101",
+      telefone: "(66) 9876-5432"
+    },
+    servico: "Consulta Oftalmológica",
+    datahora: "17/02/2024 14:30:00",
+    profissional: "Dr. Oftalmologista",
+    status: "Cancelado"
+  },
+  {
+    id: 16,
+    usuario: {
+      image: user,
+      nome: "Usuário 7",
+      endereco: "Rua G, 777",
+      telefone: "(77) 3333-9999"
+    },
+    servico: "Exame Cardiológico",
+    datahora: "12/02/2024 14:00:00",
+    profissional: "Dr. Cardiologista",
+    status: "Aguarda Confirmação"
+  },
+  {
+    id: 17,
+    usuario: {
+      image: user,
+      nome: "Usuário 8",
+      endereco: "Rua H, 888",
+      telefone: "(88) 4444-1111"
+    },
+    servico: "Consulta Psicológica",
+    datahora: "17/02/2024 15:00:00",
+    profissional: "Dra. Psicóloga",
+    status: "Confirmado"
+  },
+  {
+    id: 18,
+    usuario: {
+      image: user,
+      nome: "Usuário 9",
+      endereco: "Rua I, 999",
+      telefone: "(99) 9999-7777"
+    },
+    servico: "Atendimento Nutricional",
+    datahora: "19/02/2024 18:00:00",
+    profissional: "Nutricionista",
+    status: "Cancelado"
+  }
+]
+
 import customer1 from "@/assets/images/all-img/ubs.png";
 export const advancedTable = [
   {
