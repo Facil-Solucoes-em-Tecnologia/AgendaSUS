@@ -19,6 +19,11 @@ export const menuItems = [
     icon: "heroicons-outline:user-group",
     link: "servicos",
   },
+  {
+    title: "Gerenciar Agenda",
+    icon: "heroicons-outline:wrench",
+    link: "gerenciar",
+  },
   // {
   //   title: "Gestão de Estabelecimentos",
   //   icon: "heroicons:cog-8-tooth",
