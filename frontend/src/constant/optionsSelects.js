@@ -70,5 +70,34 @@ export const dias = [
 export const acaoOption = [
     { value: "aceitar", label: "Aceitar" },
     { value: "rejeitar", label: "Rejeitar" },
+    { value: "cancelar", label: "Cancelar" },
+];
+
+export const avaliar = [
+    {
+        value: "5",
+        label: "Ótimo",
+        activeClass: "ring-success-500 border-success-500",
+    },
+    {
+        value: "4",
+        label: "Bom",
+        activeClass: "ring-info-500 border-info-500",
+    },
+    {
+        value: "3",
+        label: "Regular",
+        activeClass: "ring-secondary-500 border-secondary-500",
+    },
+    {
+        value: "2",
+        label: "Ruim",
+        activeClass: "ring-warning-500 border-warning-500",
+    },
+    {
+        value: "1",
+        label: "Péssimo",
+        activeClass: "ring-danger-500 border-danger-500",
+    },
 ];
 

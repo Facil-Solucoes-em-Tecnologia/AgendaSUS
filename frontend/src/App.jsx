@@ -18,6 +18,7 @@ import ServicosPage from "./pages/servicos";
 import ServicosAddEdit from "./pages/servicos/common/adicionar-servicos";
 import ServicosView from "./pages/servicos/common/visualizar-servicos";
 import GerenciarAgenda from "./pages/gerenciar-agenda";
+import MinhaAgenda from "./pages/agendamento/common/minhaAgenda";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="inicio" element={<Dashboard />} />
           <Route path="usuario" element={<Profile />} />
           <Route path="agendamento" element={<Agendamento />} />
+          <Route path="agendamento/listar" element={< MinhaAgenda />} />
           <Route path="estabelecimentos" element={<EstabelecimentoPage />} />
           <Route path="estabelecimentos/adicionar" element={<EstabelecimentoAddEdit />} />
           <Route path="estabelecimentos/visualizar/:id" element={<EstabelcimentoView />} />
