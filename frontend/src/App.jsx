@@ -19,6 +19,8 @@ import ServicosAddEdit from "./pages/servicos/common/adicionar-servicos";
 import ServicosView from "./pages/servicos/common/visualizar-servicos";
 import GerenciarAgenda from "./pages/gerenciar-agenda";
 import MinhaAgenda from "./pages/agendamento/common/minhaAgenda";
+import Settings from "./pages/procuradores";
+import Procuradores from "./pages/procuradores/common/listarProcuradores";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
           <Route path="servicos/editar/:id" element={<ServicosAddEdit />} />
           <Route path="servicos/visualizar/:id" element={<ServicosView />} />
           <Route path="gerenciar" element={<GerenciarAgenda />} />
+          <Route path="configuracoes" element={<Settings />} />
+          <Route path="procuradores" element={<Procuradores />} />
         </Route>
       </Routes>
     </main>

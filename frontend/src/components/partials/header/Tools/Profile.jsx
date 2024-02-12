@@ -51,10 +51,10 @@ const Profile = () => {
       },
     },
     {
-      label: "Settings",
+      label: "Configurações",
       icon: "heroicons-outline:cog",
       action: () => {
-        console.log("settings");
+        navigate("/configuracoes")
       },
     },
     {
