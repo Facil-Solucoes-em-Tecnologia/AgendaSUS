@@ -101,3 +101,13 @@ export const avaliar = [
     },
 ];
 
+export const vinculo = [
+    { value: "Filho(a)", label: "Filho(a)" },
+    { value: "Cuidador(a)", label: "Cuidador(a)" },
+    { value: "Pai", label: "Pai" },
+    { value: "Mãe", label: "Mãe" },
+    { value: "Irmã(o)", label: "Irmã(o)" },
+    { value: "Amigo(a)", label: "Amigo(a)" },
+    { value: "Outro", label: "Outro" },
+];
+

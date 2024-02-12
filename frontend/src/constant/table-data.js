@@ -1787,6 +1787,20 @@ export const atendimentos = [
   }
 ]
 
+import procurador from "../assets/images/users/user-2.jpg";
+export const procuradores = [
+  {
+    id: 1,
+    user: {
+      cpf: "123.456.789-00",
+      nome: "Maurício de Oliveira Arnon Silva",
+      image: procurador,
+    },
+    vinculo: "Filho",
+    status: "Válido"
+  }
+]
+
 import customer1 from "@/assets/images/all-img/ubs.png";
 export const advancedTable = [
   {
