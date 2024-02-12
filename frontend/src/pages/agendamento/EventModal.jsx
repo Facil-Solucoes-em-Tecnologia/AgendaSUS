@@ -94,18 +94,18 @@ const EventModal = ({
       showCancelButton: true,
       confirmButtonColor: "#22c55e",
       cancelButtonColor: "#ef4444",
-      confirmButtonText: "Sim, exclua isso!",
+      confirmButtonText: "Sim, exclua a agenda!",
     }).then((result) => {
       if (result.isConfirmed) {
         onDelete(id);
-        Swal.fire("Excluído!", "Seu agendamento foi excluído com sucesso.", "success");
+        Swal.fire("Excluído!", "O agendamento foi excluído com sucesso.", "success");
       }
     });
   };
   return (
     <div>
       <Modal
-        title={event ? "Editar evento" : "Adicionar evento"}
+        title={event ? "Editar agenda" : "Adicionar agenda"}
         activeModal={showModal}
         onClose={onClose}
       >
@@ -144,8 +144,8 @@ const EventModal = ({
               className="form-select appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md text-base focus:outline-none focus:ring focus:border-blue-300"
               {...register("time")}
             >
-              <option value="morning">Manhã</option>
-              <option value="afternoon">Tarde</option>
+              <option value="morning">Manhã - 8 vagas</option>
+              <option value="afternoon">Tarde - 3 vagas</option>
             </select>
           </FormGroup>
 
@@ -160,7 +160,7 @@ const EventModal = ({
               </button>
             )}
             <button className="btn btn-dark  text-center">
-              {event ? "Update" : "Add"} evento
+              {event ? "Update" : "Add"} agenda
             </button>
           </div>
         </form>
