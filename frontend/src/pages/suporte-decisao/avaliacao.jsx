@@ -17,31 +17,31 @@ import HomeBredCurbs from "./HomeBredCurbs";
 
 const Ecommerce = () => {
   const [filterMap, setFilterMap] = useState("usa");
-  const [selectedProfissional, setSelectedProfissional] = useState('carlos-augusto'); 
+  const [selectedProfissional, setSelectedProfissional] = useState('carlos-augusto');
 
   return (
     <div>
-      <HomeBredCurbs title="Ecommerce" />
+      <HomeBredCurbs title="Profissionais" />
       <div className="grid grid-cols-12 gap-5 mb-5">
         <div className="2xl:col-span-3 lg:col-span-4 col-span-12">
-            <Card className="pb-3">
-              <div className="flex flex-col">
-                <label htmlFor="profissional-select" className="block text-sm font-medium text-gray-700">
-                  Profissional
-                </label>
-                <select
-                  id="profissional-select"
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                  value={selectedProfissional}
-                  onChange={(e) => setSelectedProfissional(e.target.value)}
-                >
-                  <option value="carlos-augusto">Carlos Augusto</option>
-                  <option value="maria-jose">Maria José</option>
-                  <option value="pedro-paulo">Pedro Paulo</option>
-                </select>
-              </div>
-            </Card>
-          </div>
+          <Card className="pb-3">
+            <div className="flex flex-col">
+              <label htmlFor="profissional-select" className="block text-sm font-medium text-gray-700">
+                Profissional
+              </label>
+              <select
+                id="profissional-select"
+                className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                value={selectedProfissional}
+                onChange={(e) => setSelectedProfissional(e.target.value)}
+              >
+                <option value="carlos-augusto">Carlos Augusto</option>
+                <option value="maria-jose">Maria José</option>
+                <option value="pedro-paulo">Pedro Paulo</option>
+              </select>
+            </div>
+          </Card>
+        </div>
         <div className="2xl:col-span-9 lg:col-span-8 col-span-12">
           <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
             <GroupChart2 />
@@ -57,7 +57,7 @@ const Ecommerce = () => {
           </Card>
         </div>
         <div className="xl:col-span-6 col-span-12">
-          <Card title="Profissionais melhores avaliados" headerslot={<SelectMonth />}>
+          <Card title="Profissionais melhor avaliados" headerslot={<SelectMonth />}>
             <Customer />
           </Card>
         </div>

@@ -212,7 +212,7 @@ const statistics = [
     count: "324",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
     text: "text-info-500",
-    icon: "heroicons:shopping-cart",
+    icon: "heroicons:users",
   },
   {
     name: shapeLine2,
@@ -220,7 +220,7 @@ const statistics = [
     count: "22",
     bg: "bg-[#FFEDE6] dark:bg-slate-900	",
     text: "text-warning-500",
-    icon: "heroicons:cube",
+    icon: "heroicons:clock",
   },
   {
     name: shapeLine3,
@@ -228,7 +228,7 @@ const statistics = [
     count: "18",
     bg: "bg-[#EAE6FF] dark:bg-slate-900	",
     text: "text-[#5743BE]",
-    icon: "heroicons:arrow-trending-up-solid",
+    icon: "heroicons:clock",
   },
 ];
 
