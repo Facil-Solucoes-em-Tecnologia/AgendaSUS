@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { colors } from "@/constant/data";
 import useDarkMode from "@/hooks/useDarkMode";
+
 const AccountReceivable = ({ height = 300 }) => {
   const [isDark] = useDarkMode();
   const series = [
@@ -67,19 +68,20 @@ const AccountReceivable = ({ height = 300 }) => {
     xaxis: {
       type: "datetime",
       categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
+        "2023-01-01T00:00:00.000Z",
+        "2023-01-02T00:00:00.000Z",
+        "2023-01-03T00:00:00.000Z",
+        "2023-01-04T00:00:00.000Z",
+        "2023-01-05T00:00:00.000Z",
+        "2023-01-06T00:00:00.000Z",
+        "2023-01-07T00:00:00.000Z",
       ],
       labels: {
         style: {
           colors: isDark ? "#CBD5E1" : "#475569",
           fontFamily: "Inter",
         },
+        format: 'dd/MM', // Formato da data para dia/mês
       },
       axisBorder: {
         show: false,

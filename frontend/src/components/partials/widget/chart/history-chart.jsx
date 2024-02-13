@@ -5,14 +5,15 @@ import useDarkMode from "@/hooks/useDarkMode";
 
 const HistoryChart = ({ height = 360 }) => {
   const [isDark] = useDarkMode();
+
   const series = [
     {
-      name: "Earnings",
-      data: [31, 40, 28, 51, 42, 109, 100],
+      name: "Agendamentos",
+      data: [40, 40, 37, 40, 39, 37, 40],
     },
     {
-      name: "Expenses",
-      data: [11, 32, 45, 32, 34, 52, 41],
+      name: "Comparecimentos",
+      data: [39, 32, 32, 35, 39, 30, 36],
     },
   ];
   const options = {
@@ -83,13 +84,13 @@ const HistoryChart = ({ height = 360 }) => {
     xaxis: {
       type: "datetime",
       categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
+        "2023-01-01T00:00:00.000Z",
+        "2023-01-02T00:00:00.000Z",
+        "2023-01-03T00:00:00.000Z",
+        "2023-01-04T00:00:00.000Z",
+        "2023-01-05T00:00:00.000Z",
+        "2023-01-06T00:00:00.000Z",
+        "2023-01-07T00:00:00.000Z",
       ],
       axisBorder: {
         show: false,
@@ -102,6 +103,7 @@ const HistoryChart = ({ height = 360 }) => {
           colors: isDark ? "#CBD5E1" : "#475569",
           fontFamily: "Inter",
         },
+        format: 'dd/MM', // Formato da data para dia/mês
       },
     },
   };

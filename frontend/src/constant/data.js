@@ -24,31 +24,21 @@ export const menuItems = [
     icon: "heroicons-outline:calendar-days",
     link: "gerenciar",
   },
-  // {
-  //   title: "Gestão de Estabelecimentos",
-  //   icon: "heroicons:cog-8-tooth",
-  //   link: "#",
-  //   child: [
-  //     {
-  //       childtitle: "Estabelecimentos",
-  //       childlink: "icons",
-  //     },
-  //     {
-  //       childtitle: "Serviços",
-  //       childlink: "Level-1",
-  //       multi_menu: [
-  //         {
-  //           multiTitle: "Level 2.1",
-  //           multiLink: "Level-2",
-  //         },
-  //         {
-  //           multiTitle: "Level 2.2",
-  //           multiLink: "Level-2.3",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    title: "Suporte decisão",
+    icon: "heroicons-outline:chart-bar-square",
+    link: "#",
+    child: [
+      {
+        childtitle: "Atendimentos",
+        childlink: "suporte-decisao/atendimento",
+      },
+      {
+        childtitle: "Atendimentos",
+        childlink: "atendimento",
+      },
+    ],
+  },
 ];
 
 export const topMenu = [

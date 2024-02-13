@@ -5,7 +5,7 @@ const columnCharthome2 = {
   series: [
     {
       name: "Revenue",
-      data: [40, 70, 45, 100, 75, 40, 80, 90],
+      data: [50, 10, 25],
     },
   ],
   options: {
@@ -75,7 +75,7 @@ const columnCharthome3 = {
   series: [
     {
       name: "Revenue",
-      data: [40, 70, 45, 100, 75, 40, 80, 90],
+      data: [1269, 1000, 1800],
     },
   ],
   options: {
@@ -145,7 +145,7 @@ const columnCharthome4 = {
   series: [
     {
       name: "Revenue",
-      data: [40, 70, 45, 100, 75, 40, 80, 90],
+      data: [618, 955, 1205],
     },
   ],
   options: {
@@ -214,24 +214,24 @@ const columnCharthome4 = {
 const statistics = [
   {
     name: columnCharthome3,
-    title: "Current balance ",
-    count: "$34,564",
+    title: "Total agendamentos ",
+    count: "2.549",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
     text: "text-info-500",
     icon: "heroicons:shopping-cart",
   },
   {
     name: columnCharthome4,
-    title: "Credit",
-    count: "$3,564",
+    title: "Total comparecimentos",
+    count: "2.459",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
     text: "text-warning-500",
     icon: "heroicons:cube",
   },
   {
     name: columnCharthome2,
-    title: "Debit",
-    count: "$3,564",
+    title: "Total faltas",
+    count: "100",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
     text: "text-[#5743BE]",
     icon: "heroicons:arrow-trending-up-solid",

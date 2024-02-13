@@ -21,6 +21,9 @@ import GerenciarAgenda from "./pages/gerenciar-agenda";
 import MinhaAgenda from "./pages/agendamento/common/minhaAgenda";
 import Settings from "./pages/procuradores";
 import Procuradores from "./pages/procuradores/common/listarProcuradores";
+import SuporteDecisao from "./pages/suporte-decisao"
+import SuporteDecisaoAtendimento from "./pages/suporte-decisao/atendimento"
+
 
 function App() {
   return (
@@ -46,6 +49,8 @@ function App() {
           <Route path="gerenciar" element={<GerenciarAgenda />} />
           <Route path="configuracoes" element={<Settings />} />
           <Route path="procuradores" element={<Procuradores />} />
+          <Route path="suporte-decisao" element={<SuporteDecisao />} />
+          <Route path="suporte-decisao/atendimento" element={<SuporteDecisaoAtendimento />} />
         </Route>
       </Routes>
     </main>
