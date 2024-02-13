@@ -39,29 +39,49 @@ const users = [
 
 const BankingPage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedEstabelecimento, setSelectedEstabelecimento] = useState('');
+  const [selectedEstabelecimento, setSelectedEstabelecimento] = useState('cruzeiro-velho'); 
+  const [selectedProfissional, setSelectedProfissional] = useState(''); 
   return (
     <div className="space-y-5">
       <HomeBredCurbs title="Atendimentos" />
       <Card>
         <div className="grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 place-content-center">
         <div className="flex space-x-4 h-full items-center rtl:space-x-reverse">
-            <div className="flex-1">
-              <label htmlFor="estabelecimento-select" className="block text-sm font-medium text-gray-700">
-                Estabelecimento
-              </label>
-              <select
-                id="estabelecimento-select"
-                className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                value={selectedEstabelecimento}
-                onChange={(e) => setSelectedEstabelecimento(e.target.value)}
-              >
-                <option value="">Selecione uma opção</option>
-                <option value="cruzeiro-velho">Cruzeiro velho</option>
-                <option value="lago-norte">Lago norte</option>
-              </select>
-            </div>
+          <div className="flex-1">
+            {/* Combobox Estabelecimento */}
+            <label htmlFor="estabelecimento-select" className="block text-sm font-medium text-gray-700">
+              Estabelecimento
+            </label>
+            <select
+              id="estabelecimento-select"
+              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+              value={selectedEstabelecimento}
+              onChange={(e) => setSelectedEstabelecimento(e.target.value)}
+            >
+              <option value="cruzeiro-velho">Cruzeiro velho</option>
+              <option value="lago-norte">Lago norte</option>
+            </select>
+
+            {/* Combobox Profissional */}
+            <label htmlFor="profissional-select" className="block text-sm font-medium text-gray-700 mt-4">
+              Profissional
+            </label>
+            <select
+              id="profissional-select"
+              className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+              value={selectedProfissional}
+              onChange={(e) => setSelectedProfissional(e.target.value)}
+            >
+              <option value="">Todos</option>
+              <option value="aldo-santos">Aldo dos Santos</option>
+              <option value="betina-silva">Betina da Silva</option>
+              <option value="carlos-silveira">Carlos Silveira</option>
+              <option value="danilo-sillos">Danilo Sillos</option>
+              <option value="eduardo-siqueira">Eduardo Siqueira</option>
+            </select>
           </div>
+        </div>
+
           <GroupChart5 />
         </div>
       </Card>
