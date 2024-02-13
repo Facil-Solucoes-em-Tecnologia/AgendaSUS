@@ -13,26 +13,21 @@ import {
 
 const COLUMNS = [
   {
-    Header: "user",
+    Header: "Serviço",
     accessor: "user",
     Cell: (row) => {
       return (
-        <div>
-          <div className="flex items-center">
-            <div className="flex-none">
-              <div className="w-8 h-8 rounded-[100%] ltr:mr-2 rtl:ml-2">
-                <img
-                  src={row?.cell?.value.image}
-                  alt=""
-                  className="w-full h-full rounded-[100%] object-cover"
-                />
-              </div>
+        <div className="flex items-center">
+          <div className="flex-none">
+            {/* Exibindo a posição ao invés da imagem */}
+            <div className="w-8 h-8 rounded-[100%] ltr:mr-2 rtl:ml-2 flex items-center justify-center bg-gray-300 text-white">
+              {row.row.index + 1} {/* Ajustando para mostrar a posição */}
             </div>
-            <div className="flex-1 text-start">
-              <h4 className="text-sm font-medium text-slate-600">
-                {row?.cell?.value.name}
-              </h4>
-            </div>
+          </div>
+          <div className="flex-1 text-start">
+            <h4 className="text-sm font-medium text-slate-600">
+              {row.cell.value.name}
+            </h4>
           </div>
         </div>
       );
@@ -40,33 +35,53 @@ const COLUMNS = [
   },
 
   {
-    Header: "invoice",
+    Header: "Avaliações",
     accessor: "invoice",
     Cell: (row) => {
       return <span>{row?.cell?.value}</span>;
     },
   },
   {
-    Header: "price",
+    Header: "Positivas",
     accessor: "price",
     Cell: (row) => {
       return <span>{row?.cell?.value}</span>;
     },
   },
   {
-    Header: "status",
+    Header: "Porcentagem",
     accessor: "status",
     Cell: (row) => {
       return (
         <span className="block w-full">
           <span
             className={` inline-block px-3 min-w-[90px] text-center mx-auto py-1 rounded-[999px] bg-opacity-25 ${
-              row?.cell?.value === "paid"
+              row?.cell?.value === "95%"
                 ? "text-success-500 bg-success-500"
                 : ""
             } 
             ${
-              row?.cell?.value === "due"
+              row?.cell?.value === "88%"
+                ? "text-success-500 bg-success-500"
+                : ""
+            }
+            ${
+              row?.cell?.value === "81%"
+                ? "text-success-500 bg-success-500"
+                : ""
+            }
+            ${
+              row?.cell?.value === "75%"
+                ? "text-primary-500 bg-primary-500"
+                : ""
+            }
+            ${
+              row?.cell?.value === "68%"
+                ? "text-primary-500 bg-primary-500"
+                : ""
+            }
+            ${
+              row?.cell?.value === "45%"
                 ? "text-warning-500 bg-warning-500"
                 : ""
             }

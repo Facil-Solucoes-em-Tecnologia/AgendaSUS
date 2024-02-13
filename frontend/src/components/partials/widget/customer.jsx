@@ -12,26 +12,26 @@ import customerCrownImage from "@/assets/images/icon/crown.svg";
 const Customer = () => {
   const customers = [
     {
-      title: "Nicole Kidman",
+      title: "Carlos Augusto",
       img: Image1,
-      value: 70,
-      bg: "before:bg-info-500",
-      barColor: "bg-info-500",
+      value: 88,
+      bg: "before:bg-success-500",
+      barColor: "bg-success-500",
       number: 2,
     },
     {
-      title: "Monica Bellucci",
+      title: "Maria José",
       img: Image2,
-      value: 80,
-      bg: "before:bg-warning-500",
-      barColor: "bg-warning-500",
+      value: 93,
+      bg: "before:bg-success-500",
+      barColor: "bg-success-500",
       active: true,
       number: 1,
     },
     {
-      title: "Pamela Anderson",
+      title: "Pedro Paulo",
       img: Image3,
-      value: 65,
+      value: 85,
       bg: "before:bg-success-500",
       barColor: "bg-success-500",
       number: 3,
@@ -39,7 +39,7 @@ const Customer = () => {
   ];
   const customers2 = [
     {
-      title: "Dianne Russell",
+      title: "Sandra Santos",
       img: Cuser1,
       value: 60,
       bg: "before:bg-info-500",
@@ -47,18 +47,18 @@ const Customer = () => {
       number: 4,
     },
     {
-      title: "Robert De Niro",
+      title: "Pedro Pedroso",
       img: Cuser2,
       value: 50,
-      bg: "before:bg-warning-500",
-      barColor: "bg-warning-500",
+      bg: "before:bg-info-500",
+      barColor: "bg-info-500",
 
       number: 5,
     },
     {
-      title: "De Niro",
+      title: "Carlos Silva",
       img: Cuser3,
-      value: 60,
+      value: 45,
       bg: "before:bg-warning-500",
       barColor: "bg-warning-500",
 
@@ -71,24 +71,20 @@ const Customer = () => {
         {customers.map((item, i) => (
           <div
             key={i}
-            className={` relative z-[1] text-center p-4 rounded before:w-full before:h-[calc(100%-60px)] before:absolute before:left-0 before:top-[60px] before:rounded before:z-[-1] before:bg-opacity-[0.1] ${item.bg}`}
+            className={`relative z-[1] text-center p-4 rounded before:w-full before:h-[calc(100%-60px)] before:absolute before:left-0 before:top-[60px] before:rounded before:z-[-1] before:bg-opacity-[0.1] ${item.bg}`}
           >
             <div
               className={`${
                 item.active ? "ring-2 ring-[#FFC155]" : ""
-              } h-[70px] w-[70px] rounded-full mx-auto mb-4 relative`}
+              } h-[70px] w-[70px] rounded-full mx-auto mb-4 relative flex items-center justify-center bg-gray-300`}
             >
               {item.active && (
                 <span className="crown absolute -top-[24px] left-1/2 -translate-x-1/2">
                   <img src={customerCrownImage} alt="" />
                 </span>
               )}
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-full rounded-full"
-              />
-              <span className="h-[27px] w-[27px] absolute right-0 bottom-0 rounded-full bg-[#FFC155] border border-white flex flex-col items-center justify-center text-white text-xs font-medium">
+              {/* Exibição do número no lugar da foto */}
+              <span className="text-xl font-semibold text-white">
                 {item.number}
               </span>
             </div>
@@ -100,7 +96,7 @@ const Customer = () => {
             </div>
             <div>
               <div className="flex justify-between text-sm font-normal dark:text-slate-300 mb-3 mt-4">
-                <span>Progress</span>
+                <span>Positivas</span>
                 <span className="font-normal">{item.value}%</span>
               </div>
               <ProgressBar value={item.value} className={item.barColor} />
@@ -117,19 +113,15 @@ const Customer = () => {
             <div
               className={`${
                 item.active ? "ring-2 ring-[#FFC155]" : ""
-              } h-10 w-10 rounded-full relative`}
+              } h-10 w-10 rounded-full relative flex items-center justify-center bg-gray-300`}
             >
               {item.active && (
                 <span className="crown absolute -top-[14px] left-1/2 -translate-x-1/2">
                   <img src={customerCrownImage} alt="" />
                 </span>
               )}
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-full rounded-full"
-              />
-              <span className="h-4 w-4 absolute right-0 bottom-0 rounded-full bg-[#FFC155] border border-white flex flex-col items-center justify-center text-white text-[10px] font-medium">
+              {/* Exibição do número no lugar da foto */}
+              <span className="text-lg font-semibold text-white">
                 {item.number}
               </span>
             </div>
@@ -141,7 +133,7 @@ const Customer = () => {
             </div>
             <div className="flex-1">
               <div className="flex justify-between text-sm font-normal dark:text-slate-300 mb-3">
-                <span>Progress</span>
+                <span>Positivas</span>
                 <span className="font-normal">{item.value}%</span>
               </div>
               <ProgressBar value={item.value} className={item.barColor} />
@@ -149,6 +141,7 @@ const Customer = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

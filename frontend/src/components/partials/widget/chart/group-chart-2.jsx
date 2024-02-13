@@ -6,7 +6,7 @@ import Chart from "react-apexcharts";
 const shapeLine1 = {
   series: [
     {
-      data: [800, 600, 1000, 800, 600, 1000, 800, 900],
+      data: [24, 13, 22, 18, 20, 18, 10, 4],
     },
   ],
   options: {
@@ -73,7 +73,7 @@ const shapeLine1 = {
 const shapeLine2 = {
   series: [
     {
-      data: [800, 600, 1000, 800, 600, 1000, 800, 900],
+      data: [22, 18, 30, 22, 28, 14, 30, 27],
     },
   ],
   options: {
@@ -140,7 +140,7 @@ const shapeLine2 = {
 const shapeLine3 = {
   series: [
     {
-      data: [800, 600, 1000, 800, 600, 1000, 800, 900],
+      data: [23, 2, 4, 6, 45, 60, 31, 18],
     },
   ],
   options: {
@@ -208,24 +208,24 @@ const shapeLine3 = {
 const statistics = [
   {
     name: shapeLine1,
-    title: "Totel revenue",
-    count: "3,564",
+    title: "Total atendimento",
+    count: "324",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
     text: "text-info-500",
     icon: "heroicons:shopping-cart",
   },
   {
     name: shapeLine2,
-    title: "Products sold",
-    count: "564",
+    title: "Tempo médio atendimento (min)",
+    count: "22",
     bg: "bg-[#FFEDE6] dark:bg-slate-900	",
     text: "text-warning-500",
     icon: "heroicons:cube",
   },
   {
     name: shapeLine3,
-    title: "Growth",
-    count: "+5.0%",
+    title: "Tempo médio espera (min)",
+    count: "18",
     bg: "bg-[#EAE6FF] dark:bg-slate-900	",
     text: "text-[#5743BE]",
     icon: "heroicons:arrow-trending-up-solid",

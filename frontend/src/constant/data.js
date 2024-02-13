@@ -34,8 +34,8 @@ export const menuItems = [
         childlink: "suporte-decisao/atendimento",
       },
       {
-        childtitle: "Atendimentos",
-        childlink: "atendimento",
+        childtitle: "Avaliação",
+        childlink: "suporte-decisao/avaliacao",
       },
     ],
   },

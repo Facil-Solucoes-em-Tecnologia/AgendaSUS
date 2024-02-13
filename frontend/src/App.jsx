@@ -23,7 +23,7 @@ import Settings from "./pages/procuradores";
 import Procuradores from "./pages/procuradores/common/listarProcuradores";
 import SuporteDecisao from "./pages/suporte-decisao"
 import SuporteDecisaoAtendimento from "./pages/suporte-decisao/atendimento"
-
+import SuporteDecisaoAvaliacao from "./pages/suporte-decisao/avaliacao"
 
 function App() {
   return (
@@ -51,6 +51,7 @@ function App() {
           <Route path="procuradores" element={<Procuradores />} />
           <Route path="suporte-decisao" element={<SuporteDecisao />} />
           <Route path="suporte-decisao/atendimento" element={<SuporteDecisaoAtendimento />} />
+          <Route path="suporte-decisao/avaliacao" element={<SuporteDecisaoAvaliacao />} />
         </Route>
       </Routes>
     </main>
